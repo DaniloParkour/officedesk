@@ -1,3 +1,4 @@
+import Sidebar from './components/layout/sidebar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className + ' min-h-screen'}>{children}</body>
+      <body className={inter.className + ' min-h-screen flex'}>
+        <Sidebar />
+        <div className='flex w-full items-center justify-center'>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
