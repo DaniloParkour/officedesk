@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className + ' min-h-screen flex'}>
+      <body className={inter.className + ' min-h-screen flex flex-col sm:flex-row gap-4'}>
         <Sidebar />
         <div className='flex w-full items-center justify-center'>
           {children}
