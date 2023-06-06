@@ -1,4 +1,4 @@
-import { IconCalculator, IconDashboard, IconListCheck, IconWriting, IconNotes, IconClock2 } from "@tabler/icons-react"
+import { IconCalculator, IconDashboard, IconListCheck, IconWriting, IconNotes, IconClock2 } from "@tabler/icons-react";
 import Link from "next/link";
 
 export default function Sidebar() {
