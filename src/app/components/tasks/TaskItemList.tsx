@@ -47,6 +47,22 @@ export default function TaskItemList(props: Props) {
     }
   }
 
+  function timeLeftFormat(): string {
+    let retorno:string = "";
+
+    const hours: number = Math.floor(timeLeftCounting/3600);
+    const minutes: number = Math.floor((timeLeftCounting - (Math.floor(timeLeftCounting/3600) * 3600))/60);
+    const seconds: number = timeLeftCounting%60;
+
+    if(hours > 0)
+      retorno += hours + ":";
+    if(minutes >= 0)
+      retorno += (minutes > 0 ? (minutes + ":") : (hours > 0 ? "0:" : "")); //+= (minutes > 0 ? minutes : (hours > 0 ? "0" : "")) + ( seconds ? ":" : "");
+    retorno += seconds + "";
+
+    return retorno;
+  }
+
   return(
     <li
       key={props.index}
@@ -57,7 +73,7 @@ export default function TaskItemList(props: Props) {
         `}>{
       <>
         <p className="w-[80%]">{props.name}</p>
-        <p className="w-[10%]">{timeLeftCounting}</p>
+        <p className="w-[10%]">{timeLeftFormat()}</p>
         {
           (timeLeftCounting > 0)
           &&
